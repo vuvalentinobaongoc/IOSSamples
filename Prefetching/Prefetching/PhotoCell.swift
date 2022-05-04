@@ -69,6 +69,7 @@ final class PhotoCell: UITableViewCell {
     
     // MARK: configure viewmodel
     func configure(with viewModel: ViewModel) {
+        self.titleLabel.text = "Number: \(viewModel.downloadIndex)"
         viewModel.downloadImage { (image, index) in
             DispatchQueue.main.async {
                 guard index == viewModel.downloadIndex else {
